@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 function User({ user, onRemove, onToggle }) {
   const { username, email, id, active } = user;
-  useEffect(() => console.log(user)); //모든 항목이 마운트, 언마운트될 때마다 이 함수가 실행된다 (바람직하지 못한 예)
+  // useEffect(() => console.log(user)); //모든 항목이 마운트, 언마운트될 때마다 이 함수가 실행된다 (바람직하지 못한 예)
   // useEffect(
   //   () => {
   //     console.log("user 값이 설정됨", user);
