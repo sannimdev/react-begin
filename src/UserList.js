@@ -2,18 +2,18 @@ import React, { useEffect } from "react";
 
 function User({ user, onRemove, onToggle }) {
   const { username, email, id, active } = user;
-  useEffect(() => {
-    //props => state
-    // REST API
-    // 라이브러리 사용.. D3, Video.js 등
-    //setInterval, setTimeout
-    console.log("컴포넌트가 화면에 나타난 상태 이후...", username);
-    return () => {
-      //clearInterval, clearTimeout 작업
-      //라이브러리 인스턴스 제거
-      console.log("컴포넌트가 화면에서 사라짐");
-    };
-  }, []);
+  useEffect(
+    () => {
+      console.log("user 값이 설정됨", user);
+      return () => {
+        console.log("user 값이 바뀌기 전", user);
+      };
+    },
+    //처음 나타날 때도 호출이 된다.
+    //만약에 useEffect에 등록한 함수 중 props에서 가져온 값을 참조하거나 useState값을 참조하는 경우에는
+    //depth 배열에 꼭 넣어주어야 한다.
+    [user]
+  ); //user값이 변경된 직후에 실행됨
   return (
     <div>
       <b

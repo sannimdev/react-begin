@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import Hello from "./Hello";
 import "./App.css";
 import UserList from "./UserList";
 import CreateUser from "./CreateUser";
@@ -57,7 +56,7 @@ function App() {
   };
 
   const onRemove = (id) => {
-    setUsers(users.filter((user) => user.id != id));
+    setUsers(users.filter((user) => user.id !== id));
   };
 
   const onToggle = (id) => {
