@@ -2,18 +2,19 @@ import React, { useEffect } from "react";
 
 function User({ user, onRemove, onToggle }) {
   const { username, email, id, active } = user;
-  useEffect(
-    () => {
-      console.log("user 값이 설정됨", user);
-      return () => {
-        console.log("user 값이 바뀌기 전", user);
-      };
-    },
-    //처음 나타날 때도 호출이 된다.
-    //만약에 useEffect에 등록한 함수 중 props에서 가져온 값을 참조하거나 useState값을 참조하는 경우에는
-    //depth 배열에 꼭 넣어주어야 한다.
-    [user]
-  ); //user값이 변경된 직후에 실행됨
+  useEffect(() => console.log(user)); //모든 항목이 마운트, 언마운트될 때마다 이 함수가 실행된다 (바람직하지 못한 예)
+  // useEffect(
+  //   () => {
+  //     console.log("user 값이 설정됨", user);
+  //     return () => {
+  //       console.log("user 값이 바뀌기 전", user);
+  //     };
+  //   },
+  //   //처음 나타날 때도 호출이 된다.
+  //   //만약에 useEffect에 등록한 함수 중 props에서 가져온 값을 참조하거나 useState값을 참조하는 경우에는
+  //   //depth 배열에 꼭 넣어주어야 한다.
+  //   [user]
+  // ); //user값이 변경된 직후에 실행됨
   return (
     <div>
       <b
