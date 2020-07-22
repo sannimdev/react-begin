@@ -7,8 +7,8 @@ function reducer(state, action) {
     case "DECREMENT":
       return state - 1;
     default:
-      return state;
-    //또는 throw new Error("Unhandled action");
+      // return state;
+      throw new Error("Unhandled action");
   }
 }
 
