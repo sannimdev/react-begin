@@ -1,5 +1,9 @@
-import { useState, useCallback } from "react";
+import { useState, useReducer, useCallback } from "react";
 
+function reducer(state, action) {
+  //CHANGE
+  //RESET
+}
 //custom hook
 function useInputs(initialForm) {
   const [form, setForm] = useState(initialForm);
