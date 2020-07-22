@@ -2,10 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import Hello from "./Hello";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Hello name="react" isSpecial={true} />
   </React.StrictMode>,
   document.getElementById("root")
 );
