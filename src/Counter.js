@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+//함수형 컴포넌트에는 useEffect가 있다면, 클래스형 컴포넌트에는 LifeCycle 메서드가 있다.
 class Counter extends Component {
   // constructor(props) {
   //   super(props);
